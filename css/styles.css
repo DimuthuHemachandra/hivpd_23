@@ -647,6 +647,8 @@ ul, ol {
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-md);
+  position: relative;
+  min-height: 450px;
 }
 
 .chart-wrapper-full {
@@ -662,7 +664,9 @@ ul, ol {
 
 canvas {
   max-width: 100%;
-  min-height: 300px;
+  height: 400px;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .table-wrapper {

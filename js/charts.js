@@ -38,6 +38,7 @@
   const commonOptions = {
     responsive: true,
     maintainAspectRatio: true,
+    devicePixelRatio: window.devicePixelRatio || 1,
     plugins: {
       legend: {
         display: true,
@@ -46,23 +47,26 @@
           padding: 15,
           font: {
             family: "'Inter', sans-serif",
-            size: 12
+            size: 11
           },
           usePointStyle: true,
           pointStyle: 'circle'
         }
       },
       tooltip: {
-        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-        padding: 12,
-        cornerRadius: 8,
+        enabled: true,
+        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        padding: 10,
+        cornerRadius: 6,
         titleFont: {
-          size: 14,
-          family: "'Inter', sans-serif"
+          size: 12,
+          family: "'Inter', sans-serif",
+          weight: '600'
         },
         bodyFont: {
-          size: 13,
-          family: "'Inter', sans-serif"
+          size: 11,
+          family: "'Inter', sans-serif",
+          weight: '400'
         },
         callbacks: {
           label: function(context) {
@@ -415,9 +419,10 @@
   // Helper: Create Gradient
   // ===================================
 
-  function createGradient(ctx, color1, color2) {
-    const canvas = ctx.canvas;
-    const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, canvas.height);
+  function createGradient(canvas, color1, color2) {
+    const ctx = canvas.getContext('2d');
+    const height = canvas.height || 400;
+    const gradient = ctx.createLinearGradient(0, 0, 0, height);
     gradient.addColorStop(0, color1);
     gradient.addColorStop(1, color2);
     return gradient;
