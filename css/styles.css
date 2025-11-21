@@ -662,7 +662,7 @@ ul, ol {
 
 canvas {
   max-width: 100%;
-  height: auto !important;
+  min-height: 300px;
 }
 
 .table-wrapper {
