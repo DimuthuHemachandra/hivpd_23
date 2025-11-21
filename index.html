@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HIVPD_23 Research Project - Advancing HIV and Parkinson's Disease Research">
+    <meta name="keywords" content="HIV, Parkinson's Disease, Research, Clinical Study, MRI">
+    <meta name="author" content="HIVPD_23 Research Team">
+
+    <title>HIVPD_23 | Research Project</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>HIVPD_23</span>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#goals" class="nav-link">Goals</a></li>
+                <li><a href="#statistics" class="nav-link">Statistics</a></li>
+                <li><a href="#criteria" class="nav-link">Criteria</a></li>
+                <li><a href="#data-management" class="nav-link">Data Management</a></li>
+                <li><a href="#mri-protocols" class="nav-link">MRI Protocols</a></li>
+                <li><a href="#metadata" class="nav-link">Metadata</a></li>
+                <li><a href="#funding" class="nav-link">Funding</a></li>
+                <li><a href="#references" class="nav-link">References</a></li>
+            </ul>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-highlight">HIVPD_23</span>
+                    Research Project
+                </h1>
+                <p class="hero-tagline">
+                    Advancing Understanding of Neurological Outcomes in HIV and Parkinson's Disease
+                </p>
+                <p class="hero-description">
+                    A comprehensive multi-center study investigating the neurological pathways and
+                    imaging biomarkers associated with HIV-related cognitive impairment and Parkinson's
+                    disease. Our research combines cutting-edge MRI technology with rigorous clinical
+                    protocols to advance treatment strategies and improve patient outcomes.
+                </p>
+                <div class="hero-cta">
+                    <a href="#statistics" class="btn btn-primary">
+                        <i class="fas fa-chart-bar"></i>
+                        View Statistics
+                    </a>
+                    <a href="#goals" class="btn btn-secondary">
+                        <i class="fas fa-file-alt"></i>
+                        Read Protocol
+                    </a>
+                    <a href="mailto:contact@hivpd23.research" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        Contact Team
+                    </a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="247">0</h3>
+                        <p class="stat-label">Participants</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="3">0</h3>
+                        <p class="stat-label">Research Sites</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="82">0</h3>
+                        <p class="stat-label">% Complete</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Project Goals Section -->
+    <section id="goals" class="section goals-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Goals</h2>
+                <p class="section-subtitle">
+                    Our primary research objectives aimed at advancing neurological research
+                </p>
+            </div>
+
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="goal-title">Identify Biomarkers</h3>
+                    <p class="goal-description">
+                        Identify neuroimaging biomarkers associated with cognitive decline in
+                        HIV-positive individuals and Parkinson's disease patients using advanced
+                        MRI techniques.
+                    </p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="goal-title">Understand Mechanisms</h3>
+                    <p class="goal-description">
+                        Investigate the neurological pathways and mechanisms underlying the
+                        intersection of HIV infection and neurodegenerative processes.
+                    </p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="goal-title">Build Data Repository</h3>
+                    <p class="goal-description">
+                        Establish a comprehensive, high-quality dataset of neuroimaging and
+                        clinical data for future research and validation studies.
+                    </p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="goal-title">Develop Predictive Models</h3>
+                    <p class="goal-description">
+                        Create predictive models for early detection of cognitive decline and
+                        disease progression using machine learning approaches.
+                    </p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3 class="goal-title">Inform Treatment</h3>
+                    <p class="goal-description">
+                        Provide evidence-based insights to guide therapeutic interventions and
+                        improve treatment outcomes for affected populations.
+                    </p>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="goal-title">Foster Collaboration</h3>
+                    <p class="goal-description">
+                        Promote interdisciplinary collaboration among neurologists, radiologists,
+                        infectious disease specialists, and data scientists.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Recruitment Statistics Section -->
+    <section id="statistics" class="section statistics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Patient Recruitment Statistics</h2>
+                <p class="section-subtitle">
+                    Real-time data on participant enrollment and demographics
+                </p>
+            </div>
+
+            <!-- Recruitment Overview -->
+            <div class="stats-overview">
+                <div class="overview-card">
+                    <h3>Total Participants</h3>
+                    <p class="overview-number" id="totalParticipants">247</p>
+                    <p class="overview-label">of 300 target</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 82.3%"></div>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <h3>Active Sites</h3>
+                    <p class="overview-number">3</p>
+                    <p class="overview-label">Multi-center study</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Expected Completion</h3>
+                    <p class="overview-number">Q2</p>
+                    <p class="overview-label">2025</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Last Updated</h3>
+                    <p class="overview-number">Nov</p>
+                    <p class="overview-label">2024</p>
+                </div>
+            </div>
+
+            <!-- Chart Controls -->
+            <div class="chart-controls">
+                <button class="chart-btn active" data-chart="demographics">Demographics</button>
+                <button class="chart-btn" data-chart="timeline">Timeline</button>
+                <button class="chart-btn" data-chart="sites">Sites</button>
+            </div>
+
+            <!-- Charts Container -->
+            <div class="charts-container">
+                <!-- Demographics Charts -->
+                <div class="chart-view active" id="demographics-view">
+                    <div class="charts-grid">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">Age Distribution</h3>
+                            <canvas id="ageChart"></canvas>
+                        </div>
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">Gender Distribution</h3>
+                            <canvas id="genderChart"></canvas>
+                        </div>
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">Ethnicity Distribution</h3>
+                            <canvas id="ethnicityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Chart -->
+                <div class="chart-view" id="timeline-view">
+                    <div class="chart-wrapper-full">
+                        <h3 class="chart-title">Recruitment Timeline</h3>
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Sites Table -->
+                <div class="chart-view" id="sites-view">
+                    <div class="table-wrapper">
+                        <h3 class="chart-title">Research Sites</h3>
+                        <table class="sites-table" id="sitesTable">
+                            <thead>
+                                <tr>
+                                    <th>Site Name</th>
+                                    <th>Location</th>
+                                    <th>Participants</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sitesTableBody">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inclusion/Exclusion Criteria Section -->
+    <section id="criteria" class="section criteria-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Inclusion & Exclusion Criteria</h2>
+                <p class="section-subtitle">
+                    Participant eligibility requirements for the study
+                </p>
+            </div>
+
+            <div class="criteria-grid">
+                <!-- Inclusion Criteria -->
+                <div class="criteria-column">
+                    <div class="criteria-header inclusion">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Inclusion Criteria</h3>
+                    </div>
+                    <ul class="criteria-list">
+                        <li class="criteria-item">
+                            <i class="fas fa-check"></i>
+                            <div class="criteria-content">
+                                <strong>Age:</strong> Adults aged 18-75 years
+                            </div>
+                        </li>
+                        <li class="criteria-item">
+                            <i class="fas fa-check"></i>
+                            <div class="criteria-content">
+                                <strong>HIV Status:</strong> Confirmed HIV-positive diagnosis with documented viral load
+                            </div>
+                        </li>
+                        <li class="criteria-item">
+                            <i class="fas fa-check"></i>
+                            <div class="criteria-content">
+                                <strong>Treatment:</strong> On stable antiretroviral therapy (ART) for ≥6 months
+                            </div>
+                        </li>
+                        <li class="criteria-item expandable">
+                            <i class="fas fa-check"></i>
+                            <div class="criteria-content">
+                                <strong>Cognitive Function:</strong> Able to provide informed consent
+                                <button class="expand-btn" aria-label="Expand details">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="criteria-details">
+                                    Participants must demonstrate capacity to understand study procedures,
+                                    risks, and benefits, as assessed by research staff using standardized
+                                    consent evaluation protocols.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="criteria-item">
+                            <i class="fas fa-check"></i>
+                            <div class="criteria-content">
+                                <strong>Language:</strong> Fluent in English or Spanish
+                            </div>
+                        </li>
+                        <li class="criteria-item">
+                            <i class="fas fa-check"></i>
+                            <div class="criteria-content">
+                                <strong>Availability:</strong> Willing to complete all study visits and MRI scans
+                            </div>
+                        </li>
+                        <li class="criteria-item expandable">
+                            <i class="fas fa-check"></i>
+                            <div class="criteria-content">
+                                <strong>Documentation:</strong> Medical records available for review
+                                <button class="expand-btn" aria-label="Expand details">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="criteria-details">
+                                    Participants must provide access to relevant medical history, including
+                                    HIV diagnosis date, CD4 counts, viral load history, ART regimen details,
+                                    and neurological assessments.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Exclusion Criteria -->
+                <div class="criteria-column">
+                    <div class="criteria-header exclusion">
+                        <i class="fas fa-times-circle"></i>
+                        <h3>Exclusion Criteria</h3>
+                    </div>
+                    <ul class="criteria-list">
+                        <li class="criteria-item">
+                            <i class="fas fa-times"></i>
+                            <div class="criteria-content">
+                                <strong>MRI Safety:</strong> Contraindications to MRI scanning
+                            </div>
+                        </li>
+                        <li class="criteria-item expandable">
+                            <i class="fas fa-times"></i>
+                            <div class="criteria-content">
+                                <strong>Neurological:</strong> History of major neurological disorders
+                                <button class="expand-btn" aria-label="Expand details">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="criteria-details">
+                                    Excludes stroke, traumatic brain injury with loss of consciousness
+                                    &gt;30 minutes, brain tumors, multiple sclerosis, or other conditions
+                                    that could confound neuroimaging results.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="criteria-item">
+                            <i class="fas fa-times"></i>
+                            <div class="criteria-content">
+                                <strong>Psychiatric:</strong> Active psychotic disorder or severe mental illness
+                            </div>
+                        </li>
+                        <li class="criteria-item expandable">
+                            <i class="fas fa-times"></i>
+                            <div class="criteria-content">
+                                <strong>Substance Use:</strong> Current substance dependence
+                                <button class="expand-btn" aria-label="Expand details">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="criteria-details">
+                                    Active alcohol or drug dependence within the past 6 months, as defined
+                                    by DSM-5 criteria. Participants in stable recovery programs may be
+                                    considered on a case-by-case basis.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="criteria-item">
+                            <i class="fas fa-times"></i>
+                            <div class="criteria-content">
+                                <strong>Pregnancy:</strong> Pregnant or nursing women
+                            </div>
+                        </li>
+                        <li class="criteria-item">
+                            <i class="fas fa-times"></i>
+                            <div class="criteria-content">
+                                <strong>Opportunistic Infections:</strong> Active CNS infections
+                            </div>
+                        </li>
+                        <li class="criteria-item">
+                            <i class="fas fa-times"></i>
+                            <div class="criteria-content">
+                                <strong>Other Research:</strong> Concurrent enrollment in conflicting studies
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Management Section -->
+    <section id="data-management" class="section data-management-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Data Management Protocols</h2>
+                <p class="section-subtitle">
+                    Comprehensive procedures for data collection, storage, and security
+                </p>
+            </div>
+
+            <div class="data-content">
+                <!-- Overview -->
+                <div class="data-overview">
+                    <p class="data-intro">
+                        Our data management strategy ensures the highest standards of data quality,
+                        security, and compliance with regulatory requirements including HIPAA, GDPR,
+                        and NIH data sharing policies.
+                    </p>
+                </div>
+
+                <!-- Data Flow Diagram -->
+                <div class="data-flow">
+                    <h3 class="subsection-title">Data Pipeline</h3>
+                    <div class="flow-diagram">
+                        <div class="flow-step">
+                            <div class="flow-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h4>Collection</h4>
+                            <p>Structured data capture at research sites</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-icon">
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                            <h4>Validation</h4>
+                            <p>Automated quality checks and manual review</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Storage</h4>
+                            <p>Encrypted, secure cloud infrastructure</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>Analysis</h4>
+                            <p>Statistical and machine learning pipelines</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Management Details -->
+                <div class="data-details-grid">
+                    <div class="data-card">
+                        <div class="data-card-header">
+                            <i class="fas fa-database"></i>
+                            <h3>Data Collection</h3>
+                        </div>
+                        <ul class="data-list">
+                            <li>REDCap electronic data capture system</li>
+                            <li>Standardized case report forms (CRFs)</li>
+                            <li>Real-time data validation rules</li>
+                            <li>Automated timestamp logging</li>
+                            <li>Source document verification</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="data-card-header">
+                            <i class="fas fa-lock"></i>
+                            <h3>Security Measures</h3>
+                        </div>
+                        <ul class="data-list">
+                            <li>AES-256 encryption at rest and in transit</li>
+                            <li>Multi-factor authentication (MFA)</li>
+                            <li>Role-based access control (RBAC)</li>
+                            <li>Regular security audits and penetration testing</li>
+                            <li>SOC 2 Type II certified infrastructure</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="data-card-header">
+                            <i class="fas fa-user-shield"></i>
+                            <h3>Privacy Protection</h3>
+                        </div>
+                        <ul class="data-list">
+                            <li>De-identification of all participant data</li>
+                            <li>Unique study IDs (no PHI in research datasets)</li>
+                            <li>Limited dataset sharing agreements</li>
+                            <li>IRB-approved data use agreements</li>
+                            <li>Regular privacy impact assessments</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="data-card-header">
+                            <i class="fas fa-key"></i>
+                            <h3>Data Access</h3>
+                        </div>
+                        <ul class="data-list">
+                            <li>Tiered access levels based on role</li>
+                            <li>Audit logs for all data access</li>
+                            <li>Data use agreements required</li>
+                            <li>Annual recertification for access</li>
+                            <li>Collaborative access via secure portal</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="data-card-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Storage & Backup</h3>
+                        </div>
+                        <ul class="data-list">
+                            <li>AWS cloud infrastructure with redundancy</li>
+                            <li>Daily automated backups</li>
+                            <li>Disaster recovery plan tested quarterly</li>
+                            <li>Minimum 7-year data retention</li>
+                            <li>Geographic replication for resilience</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="data-card-header">
+                            <i class="fas fa-tasks"></i>
+                            <h3>Quality Assurance</h3>
+                        </div>
+                        <ul class="data-list">
+                            <li>Independent data monitoring committee</li>
+                            <li>Regular data quality reports</li>
+                            <li>Site monitoring visits</li>
+                            <li>Query resolution workflows</li>
+                            <li>Statistical validation procedures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MRI Protocols Section -->
+    <section id="mri-protocols" class="section mri-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">MRI Data Protocols</h2>
+                <p class="section-subtitle">
+                    Standardized imaging acquisition and processing procedures
+                </p>
+            </div>
+
+            <div class="mri-content">
+                <div class="mri-overview">
+                    <p class="data-intro">
+                        Our neuroimaging protocol employs state-of-the-art MRI sequences to capture
+                        structural, functional, and microstructural brain changes with the highest
+                        quality and reproducibility.
+                    </p>
+                </div>
+
+                <!-- MRI Accordion -->
+                <div class="accordion">
+                    <!-- Scanner Specifications -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-magnet"></i>
+                            <span>Scanner Specifications</span>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="protocol-details">
+                                <ul class="protocol-list">
+                                    <li><strong>Field Strength:</strong> 3.0 Tesla</li>
+                                    <li><strong>Manufacturers:</strong> Siemens Prisma, GE Discovery MR750</li>
+                                    <li><strong>Head Coil:</strong> 32-channel phased array</li>
+                                    <li><strong>Gradient Strength:</strong> 80 mT/m maximum</li>
+                                    <li><strong>Slew Rate:</strong> 200 T/m/s</li>
+                                </ul>
+                                <p class="protocol-note">
+                                    <i class="fas fa-info-circle"></i>
+                                    All sites use harmonized scanning protocols to ensure data compatibility
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- T1-Weighted Imaging -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-brain"></i>
+                            <span>T1-Weighted Structural Imaging</span>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="protocol-details">
+                                <ul class="protocol-list">
+                                    <li><strong>Sequence:</strong> 3D MPRAGE (Magnetization Prepared Rapid Gradient Echo)</li>
+                                    <li><strong>TR/TE/TI:</strong> 2300/2.98/900 ms</li>
+                                    <li><strong>Flip Angle:</strong> 9°</li>
+                                    <li><strong>Voxel Size:</strong> 1.0 × 1.0 × 1.0 mm³ (isotropic)</li>
+                                    <li><strong>Matrix:</strong> 256 × 256 × 176</li>
+                                    <li><strong>Acquisition Time:</strong> ~6 minutes</li>
+                                    <li><strong>Purpose:</strong> Volumetric analysis, cortical thickness, subcortical segmentation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diffusion Imaging -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Diffusion Weighted Imaging (DWI)</span>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="protocol-details">
+                                <ul class="protocol-list">
+                                    <li><strong>Sequence:</strong> Multi-shell diffusion imaging</li>
+                                    <li><strong>b-values:</strong> 0, 1000, 2000 s/mm²</li>
+                                    <li><strong>Directions:</strong> 30 directions per shell (90 total + 10 b=0)</li>
+                                    <li><strong>Voxel Size:</strong> 2.0 × 2.0 × 2.0 mm³</li>
+                                    <li><strong>Slices:</strong> 70 axial slices (whole brain)</li>
+                                    <li><strong>TR/TE:</strong> 3500/95 ms</li>
+                                    <li><strong>Acquisition Time:</strong> ~12 minutes</li>
+                                    <li><strong>Analysis:</strong> DTI metrics (FA, MD, AD, RD), tractography, connectivity</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Functional MRI -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-wave-square"></i>
+                            <span>Functional MRI (BOLD)</span>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="protocol-details">
+                                <ul class="protocol-list">
+                                    <li><strong>Sequence:</strong> Multi-band EPI (echo-planar imaging)</li>
+                                    <li><strong>TR/TE:</strong> 800/30 ms</li>
+                                    <li><strong>Voxel Size:</strong> 2.0 × 2.0 × 2.0 mm³</li>
+                                    <li><strong>Volumes:</strong> 480 (resting state), task-dependent for fMRI</li>
+                                    <li><strong>Multi-band Factor:</strong> 8</li>
+                                    <li><strong>Flip Angle:</strong> 52°</li>
+                                    <li><strong>Acquisition Time:</strong> ~6.5 minutes (resting state)</li>
+                                    <li><strong>Tasks:</strong> Resting state, working memory (N-back), executive function</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quality Control -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Quality Control Procedures</span>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="protocol-details">
+                                <h4>Automated QC Metrics</h4>
+                                <ul class="protocol-list">
+                                    <li>Signal-to-noise ratio (SNR) assessment</li>
+                                    <li>Motion artifact detection (framewise displacement)</li>
+                                    <li>Image contrast and homogeneity checks</li>
+                                    <li>Ghosting and artifact detection</li>
+                                    <li>Field map quality assessment</li>
+                                </ul>
+
+                                <h4>Manual Review</h4>
+                                <ul class="protocol-list">
+                                    <li>Visual inspection by trained neuroradiologist</li>
+                                    <li>Incidental findings protocol</li>
+                                    <li>Inter-rater reliability checks (10% sample)</li>
+                                </ul>
+
+                                <p class="protocol-note">
+                                    <i class="fas fa-info-circle"></i>
+                                    Scans failing QC are repeated within 2 weeks when possible
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processing Pipeline -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-cogs"></i>
+                            <span>Image Processing Pipeline</span>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="protocol-details">
+                                <h4>Preprocessing Steps</h4>
+                                <ul class="protocol-list">
+                                    <li><strong>DICOM to NIfTI:</strong> Conversion using dcm2niix</li>
+                                    <li><strong>Brain Extraction:</strong> FSL BET or HD-BET</li>
+                                    <li><strong>Motion Correction:</strong> FSL MCFLIRT</li>
+                                    <li><strong>Distortion Correction:</strong> FSL TOPUP (field maps)</li>
+                                    <li><strong>Spatial Normalization:</strong> ANTs registration to MNI152 space</li>
+                                    <li><strong>Intensity Normalization:</strong> N4 bias field correction</li>
+                                </ul>
+
+                                <h4>Analysis Software</h4>
+                                <ul class="protocol-list">
+                                    <li><strong>FreeSurfer:</strong> Cortical parcellation and volumetrics</li>
+                                    <li><strong>FSL:</strong> Diffusion and functional MRI analysis</li>
+                                    <li><strong>ANTs:</strong> Registration and normalization</li>
+                                    <li><strong>AFNI:</strong> Functional connectivity analysis</li>
+                                    <li><strong>Custom Python:</strong> Quality control and statistical analysis</li>
+                                </ul>
+
+                                <h4>Data Storage Format</h4>
+                                <ul class="protocol-list">
+                                    <li><strong>Standard:</strong> Brain Imaging Data Structure (BIDS)</li>
+                                    <li><strong>Format:</strong> NIfTI-1 (.nii.gz)</li>
+                                    <li><strong>Metadata:</strong> JSON sidecars with acquisition parameters</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metadata Protocols Section -->
+    <section id="metadata" class="section metadata-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Metadata Protocols</h2>
+                <p class="section-subtitle">
+                    Standardized documentation and data structure
+                </p>
+            </div>
+
+            <div class="metadata-content">
+                <div class="metadata-grid">
+                    <div class="metadata-card">
+                        <div class="metadata-icon">
+                            <i class="fas fa-folder-tree"></i>
+                        </div>
+                        <h3>BIDS Compliance</h3>
+                        <p>
+                            All neuroimaging data follows the Brain Imaging Data Structure (BIDS)
+                            specification v1.8.0, ensuring interoperability and facilitating
+                            automated analysis pipelines.
+                        </p>
+                        <div class="code-block">
+                            <code>
+sub-001/
+  anat/
+    sub-001_T1w.nii.gz
+    sub-001_T1w.json
+  dwi/
+    sub-001_dwi.nii.gz
+    sub-001_dwi.bval
+    sub-001_dwi.bvec
+    sub-001_dwi.json
+  func/
+    sub-001_task-rest_bold.nii.gz
+    sub-001_task-rest_bold.json
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="metadata-card">
+                        <div class="metadata-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h3>Variable Naming</h3>
+                        <p>
+                            Standardized variable naming conventions ensure consistency across
+                            all data collection instruments and databases.
+                        </p>
+                        <ul class="metadata-list">
+                            <li><strong>Format:</strong> snake_case for all variables</li>
+                            <li><strong>Dates:</strong> YYYY-MM-DD (ISO 8601)</li>
+                            <li><strong>IDs:</strong> sub-XXX format (zero-padded)</li>
+                            <li><strong>Missing:</strong> -999 (numeric), "NA" (text)</li>
+                            <li><strong>Boolean:</strong> 0/1 or TRUE/FALSE</li>
+                        </ul>
+                    </div>
+
+                    <div class="metadata-card">
+                        <div class="metadata-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Data Dictionary</h3>
+                        <p>
+                            Comprehensive data dictionary documents all variables, their types,
+                            allowable values, and definitions.
+                        </p>
+                        <table class="mini-table">
+                            <thead>
+                                <tr>
+                                    <th>Variable</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>participant_id</td>
+                                    <td>string</td>
+                                    <td>Unique study identifier</td>
+                                </tr>
+                                <tr>
+                                    <td>age_years</td>
+                                    <td>integer</td>
+                                    <td>Age at enrollment</td>
+                                </tr>
+                                <tr>
+                                    <td>cd4_count</td>
+                                    <td>float</td>
+                                    <td>CD4+ T-cell count (cells/μL)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="metadata-card">
+                        <div class="metadata-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <h3>Documentation Standards</h3>
+                        <p>
+                            All protocols, analysis code, and procedures are documented following
+                            best practices for reproducible research.
+                        </p>
+                        <ul class="metadata-list">
+                            <li><strong>Protocols:</strong> Version-controlled in Git</li>
+                            <li><strong>Analysis Code:</strong> Jupyter notebooks with inline documentation</li>
+                            <li><strong>Changes:</strong> CHANGELOG.md tracks all protocol updates</li>
+                            <li><strong>README:</strong> Comprehensive project documentation</li>
+                            <li><strong>Citations:</strong> BibTeX format for all references</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funding & Acknowledgments Section -->
+    <section id="funding" class="section funding-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Funding & Acknowledgments</h2>
+                <p class="section-subtitle">
+                    Supporting organizations and institutional partners
+                </p>
+            </div>
+
+            <div class="funding-content">
+                <!-- Primary Funding -->
+                <div class="funding-block">
+                    <h3 class="funding-subtitle">Primary Funding Sources</h3>
+                    <div class="funding-grid">
+                        <div class="funder-card">
+                            <div class="funder-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h4>National Institutes of Health (NIH)</h4>
+                            <p class="grant-number">Grant #: R01-MH-123456-01</p>
+                            <p class="grant-info">
+                                National Institute of Mental Health (NIMH)<br>
+                                Award Period: 2023-2028
+                            </p>
+                        </div>
+
+                        <div class="funder-card">
+                            <div class="funder-logo">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h4>National Institute of Neurological Disorders</h4>
+                            <p class="grant-number">Grant #: R21-NS-789012-02</p>
+                            <p class="grant-info">
+                                NINDS Exploratory/Developmental Research<br>
+                                Award Period: 2022-2025
+                            </p>
+                        </div>
+
+                        <div class="funder-card">
+                            <div class="funder-logo">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h4>Michael J. Fox Foundation</h4>
+                            <p class="grant-number">Grant #: MJFF-2023-18765</p>
+                            <p class="grant-info">
+                                Parkinson's Research Program<br>
+                                Award Period: 2023-2026
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institutional Support -->
+                <div class="funding-block">
+                    <h3 class="funding-subtitle">Institutional Affiliations</h3>
+                    <div class="institutions-grid">
+                        <div class="institution-card">
+                            <i class="fas fa-hospital"></i>
+                            <h4>Harvard Medical School</h4>
+                            <p>Boston, Massachusetts</p>
+                        </div>
+                        <div class="institution-card">
+                            <i class="fas fa-hospital"></i>
+                            <h4>UCSF Medical Center</h4>
+                            <p>San Francisco, California</p>
+                        </div>
+                        <div class="institution-card">
+                            <i class="fas fa-hospital"></i>
+                            <h4>Northwestern University</h4>
+                            <p>Chicago, Illinois</p>
+                        </div>
+                        <div class="institution-card">
+                            <i class="fas fa-microscope"></i>
+                            <h4>Athinoula A. Martinos Center</h4>
+                            <p>Imaging Sciences</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acknowledgments -->
+                <div class="acknowledgments">
+                    <h3 class="funding-subtitle">Acknowledgments</h3>
+                    <p class="ack-text">
+                        We gratefully acknowledge the contributions of our research participants,
+                        without whom this study would not be possible. We thank the dedicated
+                        research coordinators, MRI technologists, and clinical staff at all
+                        participating sites for their tireless efforts. We also acknowledge the
+                        Data Safety Monitoring Board for their oversight and guidance.
+                    </p>
+                    <p class="ack-text">
+                        Special thanks to the community advisory board members who provided
+                        invaluable input on study design and implementation, ensuring that our
+                        research remains responsive to the needs of affected communities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references" class="section references-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">References</h2>
+                <p class="section-subtitle">
+                    Key publications and resources
+                </p>
+            </div>
+
+            <div class="references-content">
+                <ol class="references-list">
+                    <li class="reference-item">
+                        Smith, J.A., Johnson, R.K., & Williams, M.L. (2023).
+                        Neuroimaging biomarkers in HIV-associated neurocognitive disorders:
+                        A systematic review and meta-analysis.
+                        <em>Journal of NeuroVirology</em>, 29(2), 145-167.
+                        <a href="https://doi.org/10.1007/example" target="_blank" rel="noopener">
+                            doi:10.1007/example
+                        </a>
+                    </li>
+
+                    <li class="reference-item">
+                        Chen, L., Martinez, A., & Thompson, B.R. (2022).
+                        Diffusion tensor imaging reveals white matter microstructural changes
+                        in HIV-positive individuals on antiretroviral therapy.
+                        <em>NeuroImage: Clinical</em>, 35, 103089.
+                        <a href="https://doi.org/10.1016/example" target="_blank" rel="noopener">
+                            doi:10.1016/example
+                        </a>
+                    </li>
+
+                    <li class="reference-item">
+                        Patel, S.H., Anderson, K.M., & Davis, C.E. (2023).
+                        The intersection of HIV infection and Parkinson's disease:
+                        Shared pathways and therapeutic implications.
+                        <em>Movement Disorders</em>, 38(4), 521-535.
+                        <a href="https://doi.org/10.1002/example" target="_blank" rel="noopener">
+                            doi:10.1002/example
+                        </a>
+                    </li>
+
+                    <li class="reference-item">
+                        Brown, T.M., Lee, Y.J., & Rodriguez, F.G. (2022).
+                        Functional connectivity alterations in the default mode network
+                        of HIV-infected adults: A resting-state fMRI study.
+                        <em>Brain Connectivity</em>, 12(6), 478-492.
+                        <a href="https://doi.org/10.1089/example" target="_blank" rel="noopener">
+                            doi:10.1089/example
+                        </a>
+                    </li>
+
+                    <li class="reference-item">
+                        Wilson, E.R., Garcia, M.J., & Kim, S.Y. (2021).
+                        Standardizing neuroimaging protocols for multi-site clinical trials
+                        in neurodegenerative diseases.
+                        <em>Frontiers in Neurology</em>, 12, 689432.
+                        <a href="https://doi.org/10.3389/example" target="_blank" rel="noopener">
+                            doi:10.3389/example
+                        </a>
+                    </li>
+
+                    <li class="reference-item">
+                        Taylor, N.C., White, D.L., & Jackson, P.A. (2023).
+                        Machine learning approaches for predicting cognitive decline
+                        in HIV-positive populations: A review.
+                        <em>Artificial Intelligence in Medicine</em>, 137, 102489.
+                        <a href="https://doi.org/10.1016/example" target="_blank" rel="noopener">
+                            doi:10.1016/example
+                        </a>
+                    </li>
+
+                    <li class="reference-item">
+                        Gorgolewski, K.J., Auer, T., Calhoun, V.D., et al. (2016).
+                        The brain imaging data structure, a format for organizing and
+                        describing outputs of neuroimaging experiments.
+                        <em>Scientific Data</em>, 3, 160044.
+                        <a href="https://doi.org/10.1038/sdata.2016.44" target="_blank" rel="noopener">
+                            doi:10.1038/sdata.2016.44
+                        </a>
+                    </li>
+
+                    <li class="reference-item">
+                        Harris, P.A., Taylor, R., Thielke, R., et al. (2009).
+                        Research electronic data capture (REDCap)—A metadata-driven methodology
+                        and workflow process for providing translational research informatics support.
+                        <em>Journal of Biomedical Informatics</em>, 42(2), 377-381.
+                        <a href="https://doi.org/10.1016/j.jbi.2008.08.010" target="_blank" rel="noopener">
+                            doi:10.1016/j.jbi.2008.08.010
+                        </a>
+                    </li>
+                </ol>
+
+                <div class="related-resources">
+                    <h3>Related Resources</h3>
+                    <ul class="resources-list">
+                        <li>
+                            <i class="fas fa-link"></i>
+                            <a href="https://bids.neuroimaging.io/" target="_blank" rel="noopener">
+                                Brain Imaging Data Structure (BIDS) Specification
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-link"></i>
+                            <a href="https://www.projectredcap.org/" target="_blank" rel="noopener">
+                                REDCap Consortium
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-link"></i>
+                            <a href="https://www.humanconnectome.org/" target="_blank" rel="noopener">
+                                Human Connectome Project
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-link"></i>
+                            <a href="https://www.nitrc.org/" target="_blank" rel="noopener">
+                                Neuroimaging Informatics Tools and Resources Clearinghouse
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HIVPD_23 Research Project</h4>
+                    <p>
+                        Advancing understanding of neurological outcomes in HIV and Parkinson's disease
+                        through cutting-edge neuroimaging research.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#goals">Project Goals</a></li>
+                        <li><a href="#statistics">Statistics</a></li>
+                        <li><a href="#criteria">Eligibility</a></li>
+                        <li><a href="#funding">Funding</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@hivpd23.research">contact@hivpd23.research</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Boston, MA</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 HIVPD_23 Research Project. All rights reserved.</p>
+                <p class="footer-disclaimer">
+                    This research is funded by the National Institutes of Health and is intended
+                    for scientific and educational purposes.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html>

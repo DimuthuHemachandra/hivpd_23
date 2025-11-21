@@ -1,0 +1,101 @@
+{
+  "totalParticipants": 247,
+  "lastUpdated": "2024-11-15",
+  "ageGroups": [
+    {
+      "range": "18-30",
+      "count": 45,
+      "percentage": 18.2
+    },
+    {
+      "range": "31-40",
+      "count": 68,
+      "percentage": 27.5
+    },
+    {
+      "range": "41-50",
+      "count": 72,
+      "percentage": 29.1
+    },
+    {
+      "range": "51-60",
+      "count": 42,
+      "percentage": 17.0
+    },
+    {
+      "range": "60+",
+      "count": 20,
+      "percentage": 8.1
+    }
+  ],
+  "genderDistribution": [
+    {
+      "category": "Male",
+      "count": 128,
+      "percentage": 51.8
+    },
+    {
+      "category": "Female",
+      "count": 115,
+      "percentage": 46.6
+    },
+    {
+      "category": "Non-binary/Other",
+      "count": 4,
+      "percentage": 1.6
+    }
+  ],
+  "ethnicityDistribution": [
+    {
+      "category": "White/Caucasian",
+      "count": 142,
+      "percentage": 57.5
+    },
+    {
+      "category": "Black/African American",
+      "count": 45,
+      "percentage": 18.2
+    },
+    {
+      "category": "Hispanic/Latino",
+      "count": 32,
+      "percentage": 13.0
+    },
+    {
+      "category": "Asian",
+      "count": 18,
+      "percentage": 7.3
+    },
+    {
+      "category": "Other/Multiple",
+      "count": 10,
+      "percentage": 4.0
+    }
+  ],
+  "siteLocations": [
+    {
+      "site": "University Medical Center",
+      "city": "Boston, MA",
+      "participants": 98,
+      "status": "Active"
+    },
+    {
+      "site": "Regional Research Hospital",
+      "city": "San Francisco, CA",
+      "participants": 87,
+      "status": "Active"
+    },
+    {
+      "site": "Metro Health Institute",
+      "city": "Chicago, IL",
+      "participants": 62,
+      "status": "Active"
+    }
+  ],
+  "recruitmentStatus": {
+    "target": 300,
+    "current": 247,
+    "percentComplete": 82.3,
+    "expectedCompletion": "Q2 2025"
+  }
+}

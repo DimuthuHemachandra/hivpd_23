@@ -1,0 +1,14 @@
+# Custom Domain Configuration for GitHub Pages
+#
+# To use a custom domain:
+# 1. Rename this file to "CNAME" (remove .example extension)
+# 2. Replace the domain below with your custom domain
+# 3. Configure your DNS provider to point to GitHub Pages
+#
+# Example:
+# hivpd23.research.org
+#
+# For more information, visit:
+# https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+
+# your-domain.com

@@ -1,0 +1,219 @@
+{
+  "totalParticipants": 247,
+  "lastUpdated": "2024-11-15",
+  "diagnosisGroups": {
+    "HIV": {
+      "total": 95,
+      "percentage": 38.5,
+      "genderDistribution": {
+        "Male": { "count": 58, "percentage": 61.1 },
+        "Female": { "count": 35, "percentage": 36.8 },
+        "Non-binary/Other": { "count": 2, "percentage": 2.1 }
+      },
+      "ageGroups": {
+        "18-30": 22,
+        "31-40": 28,
+        "41-50": 25,
+        "51-60": 15,
+        "60+": 5
+      },
+      "completionStatus": {
+        "cognitiveTestingComplete": 88,
+        "scansComplete": 82,
+        "bothComplete": 78,
+        "pending": 7
+      },
+      "upcomingVisits": {
+        "nextWeek": 5,
+        "nextMonth": 12,
+        "nextQuarter": 8
+      }
+    },
+    "PD": {
+      "total": 82,
+      "percentage": 33.2,
+      "genderDistribution": {
+        "Male": { "count": 48, "percentage": 58.5 },
+        "Female": { "count": 33, "percentage": 40.2 },
+        "Non-binary/Other": { "count": 1, "percentage": 1.2 }
+      },
+      "ageGroups": {
+        "18-30": 3,
+        "31-40": 12,
+        "41-50": 28,
+        "51-60": 25,
+        "60+": 14
+      },
+      "completionStatus": {
+        "cognitiveTestingComplete": 75,
+        "scansComplete": 78,
+        "bothComplete": 72,
+        "pending": 4
+      },
+      "upcomingVisits": {
+        "nextWeek": 4,
+        "nextMonth": 10,
+        "nextQuarter": 6
+      }
+    },
+    "Controls": {
+      "total": 70,
+      "percentage": 28.3,
+      "genderDistribution": {
+        "Male": { "count": 22, "percentage": 31.4 },
+        "Female": { "count": 47, "percentage": 67.1 },
+        "Non-binary/Other": { "count": 1, "percentage": 1.4 }
+      },
+      "ageGroups": {
+        "18-30": 20,
+        "31-40": 28,
+        "41-50": 19,
+        "51-60": 2,
+        "60+": 1
+      },
+      "completionStatus": {
+        "cognitiveTestingComplete": 68,
+        "scansComplete": 65,
+        "bothComplete": 64,
+        "pending": 2
+      },
+      "upcomingVisits": {
+        "nextWeek": 3,
+        "nextMonth": 8,
+        "nextQuarter": 5
+      }
+    }
+  },
+  "statisticalDifferences": {
+    "genderDistribution": {
+      "chiSquare": 15.23,
+      "pValue": 0.0043,
+      "significant": true,
+      "note": "Significant difference in gender distribution across diagnosis groups (χ²=15.23, p<0.01)"
+    },
+    "ageDistribution": {
+      "fStatistic": 8.45,
+      "pValue": 0.0002,
+      "significant": true,
+      "note": "Significant age difference between groups (F=8.45, p<0.001). PD group significantly older than Controls."
+    },
+    "completionRates": {
+      "chiSquare": 2.84,
+      "pValue": 0.2417,
+      "significant": false,
+      "note": "No significant difference in completion rates across groups (χ²=2.84, p=0.24)"
+    }
+  },
+  "overallCompletion": {
+    "cognitiveTestingComplete": 231,
+    "cognitiveTestingPercentage": 93.5,
+    "scansComplete": 225,
+    "scansPercentage": 91.1,
+    "bothComplete": 214,
+    "bothPercentage": 86.6,
+    "totalPending": 13
+  },
+  "overallUpcomingVisits": {
+    "nextWeek": 12,
+    "nextMonth": 30,
+    "nextQuarter": 19,
+    "totalScheduled": 61
+  },
+  "ageGroups": [
+    {
+      "range": "18-30",
+      "count": 45,
+      "percentage": 18.2
+    },
+    {
+      "range": "31-40",
+      "count": 68,
+      "percentage": 27.5
+    },
+    {
+      "range": "41-50",
+      "count": 72,
+      "percentage": 29.1
+    },
+    {
+      "range": "51-60",
+      "count": 42,
+      "percentage": 17.0
+    },
+    {
+      "range": "60+",
+      "count": 20,
+      "percentage": 8.1
+    }
+  ],
+  "genderDistribution": [
+    {
+      "category": "Male",
+      "count": 128,
+      "percentage": 51.8
+    },
+    {
+      "category": "Female",
+      "count": 115,
+      "percentage": 46.6
+    },
+    {
+      "category": "Non-binary/Other",
+      "count": 4,
+      "percentage": 1.6
+    }
+  ],
+  "ethnicityDistribution": [
+    {
+      "category": "White/Caucasian",
+      "count": 142,
+      "percentage": 57.5
+    },
+    {
+      "category": "Black/African American",
+      "count": 45,
+      "percentage": 18.2
+    },
+    {
+      "category": "Hispanic/Latino",
+      "count": 32,
+      "percentage": 13.0
+    },
+    {
+      "category": "Asian",
+      "count": 18,
+      "percentage": 7.3
+    },
+    {
+      "category": "Other/Multiple",
+      "count": 10,
+      "percentage": 4.0
+    }
+  ],
+  "siteLocations": [
+    {
+      "site": "University Medical Center",
+      "city": "Boston, MA",
+      "participants": 98,
+      "status": "Active"
+    },
+    {
+      "site": "Regional Research Hospital",
+      "city": "San Francisco, CA",
+      "participants": 87,
+      "status": "Active"
+    },
+    {
+      "site": "Metro Health Institute",
+      "city": "Chicago, IL",
+      "participants": 62,
+      "status": "Active"
+    }
+  ],
+  "recruitmentStatus": {
+    "target": 300,
+    "current": 247,
+    "percentComplete": 82.3,
+    "expectedCompletion": "Q2 2025"
+  }
+}

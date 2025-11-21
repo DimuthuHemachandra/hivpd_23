@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIVPD_23 | Enhanced Statistics Demo</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enhanced_statistics.css">
+
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #00a896;
+            --accent-color: #f77f00;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --info-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --background-color: #ffffff;
+            --card-background: #f9fafb;
+            --gray-color: #6b7280;
+        }
+
+        [data-theme="dark"] {
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --background-color: #1f2937;
+            --card-background: #111827;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-background);
+            border: 2px solid var(--primary-color);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .section {
+            padding: 2rem 0;
+        }
+
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .overview-card {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .overview-card h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin: 0 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .overview-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0.5rem 0;
+        }
+
+        .overview-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .chart-wrapper {
+            background: var(--card-background);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 1rem 0;
+            text-align: center;
+        }
+
+        .chart-wrapper-full {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        .instructions {
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 168, 150, 0.1));
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .instructions ul {
+            line-height: 2;
+        }
+
+        .instructions li {
+            margin: 0.5rem 0;
+        }
+
+        .instructions strong {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i> Toggle Dark Mode
+    </button>
+
+    <!-- Header -->
+    <div class="header">
+        <h1><i class="fas fa-chart-line"></i> Enhanced Recruitment Statistics</h1>
+        <p>Interactive visualization with expandable details for HIV, PD, and Control groups</p>
+    </div>
+
+    <!-- Instructions -->
+    <div class="container">
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> How to Use This Interactive Dashboard</h3>
+            <ul>
+                <li><strong>Click on summary cards</strong> at the top to expand detailed breakdowns for each diagnosis group</li>
+                <li><strong>Click on chart segments</strong> in the Diagnosis Distribution chart to see group-specific details</li>
+                <li><strong>Hover over timeline points</strong> to see monthly recruitment details including:
+                    <ul>
+                        <li>New recruits by diagnosis group (HIV, PD, Controls)</li>
+                        <li>Cognitive tests and scans completed that month</li>
+                        <li>Cumulative totals</li>
+                    </ul>
+                </li>
+                <li><strong>View statistical differences</strong> between groups including chi-square and p-values</li>
+                <li><strong>Expandable sections</strong> show:
+                    <ul>
+                        <li>Gender ratios for each diagnosis group</li>
+                        <li>Completion status (cognitive testing & scans)</li>
+                        <li>Upcoming visits breakdown</li>
+                    </ul>
+                </li>
+                <li><strong>Click the X button</strong> in expanded sections to close them</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Enhanced Patient Recruitment Statistics Section -->
+    <section id="statistics" class="section statistics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Patient Recruitment Statistics</h2>
+                <p class="section-subtitle">
+                    Interactive visualization of participant enrollment, demographics, and progress
+                </p>
+            </div>
+
+            <!-- Quick Summary Cards -->
+            <div class="stats-overview">
+                <div class="overview-card clickable" onclick="window.EnhancedChartManager.expandDiagnosis('HIV')">
+                    <h3>HIV Participants</h3>
+                    <p class="overview-number" id="hivCount">95</p>
+                    <p class="overview-label">38.5% of total</p>
+                    <div class="click-hint">Click for details</div>
+                </div>
+                <div class="overview-card clickable" onclick="window.EnhancedChartManager.expandDiagnosis('PD')">
+                    <h3>PD Participants</h3>
+                    <p class="overview-number" id="pdCount">82</p>
+                    <p class="overview-label">33.2% of total</p>
+                    <div class="click-hint">Click for details</div>
+                </div>
+                <div class="overview-card clickable" onclick="window.EnhancedChartManager.expandDiagnosis('Controls')">
+                    <h3>Control Participants</h3>
+                    <p class="overview-number" id="controlsCount">70</p>
+                    <p class="overview-label">28.3% of total</p>
+                    <div class="click-hint">Click for details</div>
+                </div>
+                <div class="overview-card clickable" onclick="window.EnhancedChartManager.expandCompletion()">
+                    <h3>Completion Rate</h3>
+                    <p class="overview-number" id="completionRate">86.6%</p>
+                    <p class="overview-label">Both tests complete</p>
+                    <div class="click-hint">Click for details</div>
+                </div>
+            </div>
+
+            <!-- Summary At a Glance -->
+            <div class="summary-section">
+                <h3 class="subsection-title">Summary At a Glance</h3>
+                <div class="charts-grid-summary">
+                    <div class="chart-wrapper">
+                        <h4 class="chart-title">Diagnosis Distribution</h4>
+                        <canvas id="diagnosisChart"></canvas>
+                        <p class="chart-hint">Click on a segment for detailed breakdown</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <h4 class="chart-title">Age Distribution by Diagnosis</h4>
+                        <canvas id="ageByDiagnosisChart"></canvas>
+                    </div>
+                    <div class="chart-wrapper">
+                        <h4 class="chart-title">Completion Status</h4>
+                        <canvas id="completionChart"></canvas>
+                        <p class="chart-hint">Click for breakdown by diagnosis</p>
+                    </div>
+                    <div class="chart-wrapper">
+                        <h4 class="chart-title">Upcoming Visits</h4>
+                        <canvas id="upcomingVisitsChart"></canvas>
+                        <p class="chart-hint">Click for breakdown by diagnosis</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistical Differences -->
+            <div class="statistical-section">
+                <h3 class="subsection-title">Statistical Differences Between Groups</h3>
+                <div id="statisticalDifferences" class="stat-differences-container">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Expandable: HIV Group Details -->
+            <div class="expandable-section" id="hivDetail">
+                <div class="expandable-header">
+                    <h3>
+                        <i class="fas fa-virus"></i> HIV Group - Detailed Analysis
+                        <button class="close-btn" onclick="this.parentElement.parentElement.parentElement.classList.remove('expanded')">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="expandable-content">
+                    <div class="detail-grid">
+                        <div class="detail-card">
+                            <h4>Gender Distribution</h4>
+                            <canvas id="hivGenderChart"></canvas>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Completion Status</h4>
+                            <div id="hivCompletion" class="stats-list"></div>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Upcoming Visits</h4>
+                            <div id="hivVisits" class="stats-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expandable: PD Group Details -->
+            <div class="expandable-section" id="pdDetail">
+                <div class="expandable-header">
+                    <h3>
+                        <i class="fas fa-brain"></i> Parkinson's Disease Group - Detailed Analysis
+                        <button class="close-btn" onclick="this.parentElement.parentElement.parentElement.classList.remove('expanded')">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="expandable-content">
+                    <div class="detail-grid">
+                        <div class="detail-card">
+                            <h4>Gender Distribution</h4>
+                            <canvas id="pdGenderChart"></canvas>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Completion Status</h4>
+                            <div id="pdCompletion" class="stats-list"></div>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Upcoming Visits</h4>
+                            <div id="pdVisits" class="stats-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expandable: Controls Group Details -->
+            <div class="expandable-section" id="controlsDetail">
+                <div class="expandable-header">
+                    <h3>
+                        <i class="fas fa-user-check"></i> Control Group - Detailed Analysis
+                        <button class="close-btn" onclick="this.parentElement.parentElement.parentElement.classList.remove('expanded')">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="expandable-content">
+                    <div class="detail-grid">
+                        <div class="detail-card">
+                            <h4>Gender Distribution</h4>
+                            <canvas id="controlsGenderChart"></canvas>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Completion Status</h4>
+                            <div id="controlsCompletion" class="stats-list"></div>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Upcoming Visits</h4>
+                            <div id="controlsVisits" class="stats-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expandable: Completion Details -->
+            <div class="expandable-section" id="completionDetail">
+                <div class="expandable-header">
+                    <h3>
+                        <i class="fas fa-check-circle"></i> Completion Status - Detailed Breakdown
+                        <button class="close-btn" onclick="this.parentElement.parentElement.parentElement.classList.remove('expanded')">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="expandable-content">
+                    <div class="detail-full">
+                        <h4>Completion Status by Diagnosis Group</h4>
+                        <canvas id="completionByDiagnosisChart"></canvas>
+                        <div class="completion-legend">
+                            <p><strong>Overall Statistics:</strong></p>
+                            <ul>
+                                <li>Cognitive Testing Complete: 231 participants (93.5%)</li>
+                                <li>Scans Complete: 225 participants (91.1%)</li>
+                                <li>Both Complete: 214 participants (86.6%)</li>
+                                <li>Pending: 13 participants</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expandable: Upcoming Visits Details -->
+            <div class="expandable-section" id="upcomingVisitsDetail">
+                <div class="expandable-header">
+                    <h3>
+                        <i class="fas fa-calendar-alt"></i> Upcoming Visits - Detailed Schedule
+                        <button class="close-btn" onclick="this.parentElement.parentElement.parentElement.classList.remove('expanded')">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div class="expandable-content">
+                    <div class="detail-full">
+                        <h4>Upcoming Visits by Diagnosis Group</h4>
+                        <canvas id="upcomingVisitsByDiagnosisChart"></canvas>
+                        <div class="visits-legend">
+                            <p><strong>Total Scheduled Visits:</strong></p>
+                            <ul>
+                                <li>Next Week: 12 visits</li>
+                                <li>Next Month: 30 visits</li>
+                                <li>Next Quarter: 19 visits</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Timeline Section -->
+            <div class="timeline-section">
+                <h3 class="subsection-title">Recruitment Timeline - Interactive</h3>
+                <p class="subsection-description">Hover over data points to see detailed recruitment information for each month</p>
+                <div class="chart-wrapper-full">
+                    <canvas id="enhancedTimelineChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Enhanced Charts Script -->
+    <script src="js/enhanced_charts.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+
+            // Update button text
+            const btn = document.querySelector('.theme-toggle');
+            btn.innerHTML = newTheme === 'dark'
+                ? '<i class="fas fa-sun"></i> Toggle Light Mode'
+                : '<i class="fas fa-moon"></i> Toggle Dark Mode';
+        }
+
+        // Set initial theme
+        document.documentElement.setAttribute('data-theme', 'light');
+    </script>
+
+</body>
+</html>
